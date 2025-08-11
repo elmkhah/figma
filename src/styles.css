@@ -1,0 +1,23 @@
+@import "tailwindcss";
+@us
+
+
+@font-face {
+  font-family: 'Ray';
+  src: url('/font/Ray-Medium.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.mat-form-field-label {
+  color:blue!important;
+}
+
+.mat-label {
+  background-color: blue;
+}

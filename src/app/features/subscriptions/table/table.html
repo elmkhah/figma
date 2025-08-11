@@ -1,0 +1,102 @@
+
+<div>
+  <table class="w-full divide-y-2 divide-gray-400 hidden md:table">
+    <thead>
+    <tr>
+      <th class="text-right pb-5">ردیف</th>
+      <th class="text-right pb-5">عنوان اشتراک</th>
+      <th class="text-right pb-5">قیمت اشتراک</th>
+      <th class="text-right pb-5">تعداد پیام</th>
+      <th class="text-right pb-5">تاریخ ثبت</th>
+
+    </tr>
+    </thead>
+
+    <tbody>
+
+      @for (sub of visibleItems(); track sub.num) {
+      <tr>
+        <td class="py-4">{{sub.num}}</td>
+        <td class="py-4">{{sub.title}}</td>
+        <td class="py-4">{{sub.price}}</td>
+        <td class="py-4">{{sub.messages}}</td>
+        <td class="py-4">{{sub.date}}</td>
+        <td class="py-4 flex flex-row gap-3"><img (click)="delEmit(sub.num)" src="/svg/Trash%20Bin%202.svg"> <img src="/svg/Pen%20New%20Square%202.svg"></td>
+      </tr>
+    }
+    </tbody>
+
+  </table>
+</div>
+
+
+<!--***********************************-->
+<!--***********************************-->
+<!--***********************************-->
+<!--***********************************-->
+
+
+<div class="space-y-4 md:hidden">
+  @for (sub of visibleItems(); track sub.num) {
+    <div class="p-4 border rounded-lg shadow-sm">
+      <div class="flex justify-between">
+        <span class="font-medium">ردیف:</span>
+        <span>{{sub.num}}</span>
+      </div>
+      <div class="flex justify-between">
+        <span class="font-medium">عنوان:</span>
+        <span>{{sub.title}}</span>
+      </div>
+      <div class="flex justify-between">
+        <span class="font-medium">قیمت:</span>
+        <span>{{sub.price}}</span>
+      </div>
+      <div class="flex justify-between">
+        <span class="font-medium">تعداد پیام:</span>
+        <span>{{sub.messages}}</span>
+      </div>
+      <div class="flex justify-between">
+        <span class="font-medium">تاریخ ثبت:</span>
+        <span>{{sub.date}}</span>
+      </div>
+      <div class="flex justify-end gap-3 mt-2">
+        <img (click)="delEmit(sub.num)" src="/svg/Trash%20Bin%202.svg" class="w-5 h-5">
+        <img src="/svg/Pen%20New%20Square%202.svg"  class="w-5 h-5">
+      </div>
+    </div>
+  }
+</div>
+
+
+
+
+<!--***********************************-->
+<!--***********************************-->
+<!--***********************************-->
+<!--***********************************-->
+<!--***********************************-->
+
+
+
+
+<div class="flex justify-center gap-2 mt-4">
+  <button
+    (click)="prevPage()"
+    [disabled]="currentPage === 1"
+    class="px-4 py-2 bg-gray-200 rounded disabled:opacity-50 cursor-pointer"
+  >
+    قبلی
+  </button>
+
+  <span class="px-4 py-2"> {{currentPage}}</span>
+
+  <button
+    (click)="nextPage()"
+    [disabled]="currentPage * itemsPerPage >= subs.length"
+    class="px-4 py-2 bg-gray-200 rounded disabled:opacity-50 cursor-pointer"
+  >
+    بعدی
+  </button>
+</div>
+
+

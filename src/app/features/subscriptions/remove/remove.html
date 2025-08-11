@@ -1,0 +1,18 @@
+@if (show) {
+  <div     class="fixed inset-0 bg-[rgba(0,0,0,0.4)] flex items-center justify-center"
+           (click)="close.emit()" >
+
+
+    <div class="bg-white p-4 rounded-xl flex flex-col gap-3  shadow" (click)="$event.stopPropagation()">
+
+
+      <p class="text-sm">آیا می خواهید اشتراک را حذف کنید؟</p>
+      <div class="flex flex-row justify-between items-center">
+        <p class="text-center mr-8 cursor-pointer" (click)=Confirm()>بله</p>
+        <div class="w-0.5 h-5 bg-gray-300"></div>
+        <p class="text-center ml-8 cursor-pointer text-red-500">خیر</p>
+      </div>
+
+    </div>
+  </div>
+}

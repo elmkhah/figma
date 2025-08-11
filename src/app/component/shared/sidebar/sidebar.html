@@ -1,0 +1,94 @@
+<div class="flex flex-col h-full w-full gap-7 p-10">
+  <div class="text-2xl font-bold">
+    پنل مدیریتی
+  </div>
+    <a routerLink="/dash/admins"
+       routerLinkActive="text-[#07b1bc] font-extrabold"
+       class="flex flex-row justify-start items-center gap-3 font-bold relative">
+      <img [src]="router.isActive('/dash/admins', true) ? '/svg/Shield User 2.svg' : '/svg/Shield User.svg'">
+      @if(router.isActive('/dash/admins',true)){
+        <div class="absolute h-12 w-2 right-[-40px] bg-[#07b1bc] "></div>
+      }
+      <p>ادمین ها</p>
+    </a>
+
+  <a routerLink="/dash/users"
+     routerLinkActive="text-[#07b1bc] font-extrabold"
+     class="flex flex-row justify-start items-center gap-3 font-bold relative">
+    <img [src]="router.isActive('/dash/users', true) ? '/svg/User Circle 2.svg' : '/svg/User Circle.svg'">
+    @if(router.isActive('/dash/users',true)){
+      <div class="absolute h-12 w-2 right-[-40px] bg-[#07b1bc] "></div>
+    }
+    <p>کاربران</p>
+  </a>
+
+  <a routerLink="/dash/subscriptions"
+     routerLinkActive="text-[#07b1bc] font-extrabold"
+     class="flex flex-row justify-start items-center gap-3 font-bold relative">
+    <img [src]="router.url.includes('/dash/subscriptions') ? '/svg/Bag Check 2.svg' : '/svg/Bag Check.svg'">
+    @if(router.url.includes('/dash/subscriptions')){
+      <div class="absolute h-12 w-2 right-[-40px] bg-[#07b1bc] animate-pulse"></div>
+    }
+    <p>اشتراک</p>
+  </a>
+
+  <a routerLink="/dash/logs"
+     routerLinkActive="text-[#07b1bc] font-extrabold"
+     class="flex flex-row justify-start items-center gap-3 font-bold relative">
+    <img [src]="router.url.includes('/dash/logs') ? '/svg/Clock Circle 2.svg' : '/svg/Clock Circle.svg'">
+    @if(router.url.includes('/dash/logs')){
+      <div class="absolute h-12 w-2 right-[-40px] bg-[#07b1bc] "></div>
+    }
+    <p>لاگ ها</p>
+  </a>
+
+  <a routerLink="/dash/blocks"
+     routerLinkActive="text-[#07b1bc] font-extrabold"
+     class="flex flex-row justify-start items-center gap-3 font-bold relative">
+    <img [src]="router.isActive('/dash/blocks', true) ? '/svg/Forbidden Circle 3.svg' : '/svg/Forbidden Circle.svg'">
+    @if(router.isActive('/dash/blocks',true)){
+      <div class="absolute h-12 w-2 right-[-40px] bg-[#07b1bc] "></div>
+    }
+    <p>مسدود شده ها</p>
+  </a>
+
+  <a routerLink="/dash/faq"
+     routerLinkActive="text-[#07b1bc] font-extrabold"
+     class="flex flex-row justify-start items-center gap-3 font-bold relative">
+    <img [src]="router.isActive('/dash/faq', true) ? '/svg/Question Circle 2.svg' : '/svg/Question Circle.svg'">
+    @if(router.isActive('/dash/faq',true)){
+      <div class="absolute h-12 w-2 right-[-40px] bg-[#07b1bc] "></div>
+    }
+    <p>سوالات متداول</p>
+  </a>
+
+  <a routerLink="/dash/orders"
+     routerLinkActive="text-[#07b1bc] font-extrabold"
+
+     class="flex flex-row justify-start items-center gap-3 font-bold relative">
+    <img [src]="router.isActive('/dash/orders', true) ? '/svg/Checklist Minimalistic 2.svg' : '/svg/Checklist Minimalistic.svg'">
+    @if(router.isActive('/dash/orders',true)){
+      <div class="absolute h-12 w-2 right-[-40px] bg-[#07b1bc] "></div>
+    }
+    <p>لیست سفارشات</p>
+  </a>
+
+
+
+  <a routerLink="/dash/setting"
+     routerLinkActive="text-[#07b1bc] font-extrabold"
+     class="flex flex-row justify-start items-center gap-3 font-bold relative">
+    @if(router.isActive('/dash/setting',true)){
+      <div class="absolute h-12 w-2 right-[-40px] bg-[#07b1bc] "></div>
+    }
+    <img [src]="router.isActive('/dash/setting', true) ? 'svg/Settings 2.svg' : 'svg/Settings.svg'" alt="settings">
+    <p>تنظیمات تعرفه فروش</p>
+  </a>
+
+
+  <a  (click)="this.master.logout()" class="cursor-pointer mt-10 flex flex-row justify-start items-center gap-3 font-bold text-orange-400">
+    <img class="w-8 h-8" src="/svg/Logout.png"/>
+    <p>خروج</p>
+  </a>
+
+</div>

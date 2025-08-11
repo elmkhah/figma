@@ -1,0 +1,24 @@
+<div class="flex flex-col items-center pt-5 gap-5 w-full h-full">
+  <p>
+    خرید سکه
+  </p>
+  <input type="number" [(ngModel)]="coin" class="focus:outline-none p-3 bg-gray-200 rounded-lg">
+  <button (click)="buyClick(coin)" class="text-white cursor-pointer bg-[#07b1bc] p-3 rounded-xl">خرید</button>
+
+  <div class="flex flex-row gap-5">
+    <p>موجودی شما: </p>
+    <p> {{localStorage.getItem('coin')}} </p>
+  </div>
+
+
+  <div class="w-1/2 p-5 flex flex-col gap-2">
+
+    <textarea [(ngModel)]="chatText" class="bg-gray-100 p-2 rounded-xl focus:outline-none">
+    </textarea>
+
+    <button class="bg-green-700 text-white px-3 py-2 rounded-lg cursor-pointer" type="submit" (click)="sendMessage()">ارسال</button>
+
+    <p class="bg-gradient-to-bl from-gray-50 to-gray-200 p-3 rounded-b-lg rounded-l-lg">{{resText || 'فعلا که چیزی ننوشتی!'}} </p>
+  </div>
+
+</div>

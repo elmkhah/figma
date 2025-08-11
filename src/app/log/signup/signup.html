@@ -1,0 +1,35 @@
+<div class="w-screen h-screen fixed inset-0 bg-[#07b1bc] z-0">
+  <img src="/image/Vector.png" class="opacity-10">
+</div>
+
+
+<div class="w-screen h-screen flex flex-col items-center relative justify-center z-10">
+  <div class="w-96 h-[500px] bg-white rounded-2xl flex justify-between flex-col gap-10 p-10 shadow-2xl items-center">
+   <router-outlet></router-outlet>
+
+    <div class="w-full h-5 grid grid-cols-3 gap-3">
+      @if(this.router.url.includes('/login/signup/1')){
+      <div class="bg-[#07b1bc] w-full h-full rounded-full"> </div>} @else {
+        <a routerLink="1"><div class="bg-[#07b1bc] opacity-30 w-full h-full rounded-full"> </div></a>
+      }
+      @if(this.router.url.includes('/login/signup/2')){
+        <div class="bg-[#07b1bc] w-full h-full rounded-full"> </div>} @else {
+        <a routerLink="2"><div class="bg-[#07b1bc] opacity-30 w-full h-full rounded-full"> </div></a>
+      }
+      @if(this.router.url.includes('/login/signup/3')){
+        <div class="bg-[#07b1bc] w-full h-full rounded-full"> </div>} @else {
+        <a routerLink="3"><div class="bg-[#07b1bc] opacity-30 w-full h-full rounded-full"> </div></a>
+      }
+    </div>
+  </div>
+</div>
+
+@if(isLoading){
+  <div class="flex items-center justify-center fixed inset-0 bg-black opacity-30 z-20">
+  </div>
+  <div class="flex fixed inset-0 flex-col z-30 items-center justify-center">
+    <div class="flex flex-col w-40 h-40 items-center justify-center bg-white p-5 rounded-xl text-center shadow">
+      در حال ارسال اطلاعات...
+    </div>
+  </div>
+}

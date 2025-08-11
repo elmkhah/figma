@@ -1,0 +1,31 @@
+<div class="flex flex-row w-screen h-screen font-[Ray] overflow-hidden">
+  <div class="hidden md:flex md:w-1/5 flex-col border-l border-l-gray-200 overflow-hidden">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="flex flex-col w-full md:w-4/5">
+    <div class="w-full h-15 flex flex-row justify-between p-3 items-center border-b-1 border-b-gray-200 px-5">
+
+      <div class="flex flex-row items-center gap-5">
+        <img class="md:hidden cursor-pointer" (click)="showMenu()" src="/svg/Hamburger%20Menu.svg">
+        <p class="font-black text-2xl ">سلام {{ localStorage.getItem('name') }}</p>
+      </div>
+
+      <div class="flex flex-row gap-3 items-center text-gray-400">
+        <img class="invert-50" src="/svg/Bell.svg"/>
+        <div class="w-0.5 h-10 bg-gray-300 rounded-full"></div>
+        <p class="text-sm ml-15">نام ادمین</p>
+        <img class="invert-50" src="/svg/Alt%20Arrow%20Down.svg"/>
+      </div>
+    </div>
+
+    <div class="h-full w-full overflow-x-auto">
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+</div>
+
+@if(menu){
+  <app-mob-sidebar class=" transition-opacity ease-in-out duration-500" (show)="showMenu()"></app-mob-sidebar>
+}
+

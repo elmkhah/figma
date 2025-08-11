@@ -1,0 +1,174 @@
+<div class="flex flex-col md:flex-row gap-10 md:gap-0 justify-between w-full p-10">
+  <div class="flex flex-col w-full md:w-3/5 gap-5">
+
+    <p>برای ایجاد و یا ویرایش اشتراک لطفا فرم زیر را پر کنید !</p>
+
+    <div class="flex flex-col gap-5 w-full">
+
+      <div class="flex flex-row justify-between w-full md:w-2/3 items-center">
+        <label class="w-2/5"> عنوان اشتراک :</label>
+        <input class="w-3/5 focus:outline-none p-3 rounded-xl border-2 border-gray-300 text-sm placeholder:text-gray-400"  placeholder="عنوان اشتراک خود را وارد کنید">
+      </div>
+
+
+      <div class="flex flex-row justify-between w-full md:w-2/3 items-center">
+        <label class="w-2/5"> هزینه اشتراک :</label>
+        <input class="w-3/5 focus:outline-none p-3 rounded-xl border-2 border-gray-300 text-sm placeholder:text-gray-400"  placeholder="هزینه اشتراک خود را وارد کنید">
+      </div>
+
+
+      <div class="flex flex-row justify-between w-full md:w-2/3 items-center">
+        <label class="w-2/5"> مدت زمان اشتراک :</label>
+        <select     class="selects w-3/5 p-3 rounded-xl border-2 border-gray-300 text-sm text-gray-700 bg-white focus:outline-none">
+          <option disabled selected> زمان مد نظر خود را وارد کنید</option>
+          <option class="options">4 ماه</option>
+          <option class="options">6 ماه</option>
+          <option class="options">8 ماه</option>
+          <option class="options">9 ماه</option>
+          <option class="options">12 ماه</option>
+        </select>
+
+      </div>
+
+
+      <div class="flex flex-row justify-between w-full md:w-2/3 items-center">
+        <label class="w-2/5"> تعداد دریافت پیام :</label>
+        <input [(ngModel)]="massNum" class="w-3/5 focus:outline-none p-3 rounded-xl border-2 border-gray-300 text-sm placeholder:text-gray-400"  placeholder="تعداد دریافت پیام ها را وارد کنید">
+      </div>
+
+      <div class="flex flex-row justify-between w-full md:w-2/3 ">
+        <label>ویژگی ها :</label>
+        <div class="flex flex-col gap-2 w-3/5">
+          <div (click)="panel= !panel" class="flex flex-row justify-start gap-5 w-full transition-colors duration-300 rounded-2xl  px-3 py-2" [class]="panel ? 'bg-[#07b1bc] text-white' : 'bg-[#eeeeee] '">
+            @if(panel){
+              <img (click)="panel= !panel" src="/svg/Check%20Circle.svg" class="invert-100">
+            } @else {
+              <div (click)="panel= !panel" class="w-6 h-6 rounded-full bg-white"></div>
+            }
+            <p>پنل</p>
+          </div>
+
+
+
+          <div (click)="telegram= !telegram" class="flex flex-row justify-start gap-5 w-full transition-colors duration-300 rounded-2xl  px-3 py-2" [class]="telegram ? 'bg-[#07b1bc] text-white' : 'bg-[#eeeeee] '">
+            @if(telegram){
+              <img (click)="telegram= !telegram" src="/svg/Check%20Circle.svg" class="invert-100">
+            } @else {
+              <div (click)="telegram= !telegram" class="w-6 h-6 rounded-full bg-white"></div>
+            }
+            <p>تلگرام</p>
+          </div>
+
+
+
+          <div (click)="whatsapp= !whatsapp" class="flex flex-row justify-start gap-5 w-full transition-colors duration-300 rounded-2xl  px-3 py-2" [class]="whatsapp ? 'bg-[#07b1bc] text-white' : 'bg-[#eeeeee] '">
+            @if(whatsapp){
+              <img (click)="whatsapp= !whatsapp" src="/svg/Check%20Circle.svg" class="invert-100">
+            } @else {
+              <div (click)="whatsapp= !whatsapp" class="w-6 h-6 rounded-full bg-white"></div>
+            }
+            <p>واتساپ</p>
+          </div>
+
+
+
+          <div (click)="email= !email" class="flex flex-row justify-start gap-5 w-full transition-colors duration-300 rounded-2xl  px-3 py-2" [class]="email ? 'bg-[#07b1bc] text-white' : 'bg-[#eeeeee] '">
+            @if(email){
+              <img (click)="email= !email" src="/svg/Check%20Circle.svg" class="invert-100">
+            } @else {
+              <div (click)="email= !email" class="w-6 h-6 rounded-full bg-white"></div>
+            }
+            <p>ایمیل</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!--  **********************************************-->
+  <!--  **********************************************-->
+  <!--  **********************************************-->
+
+
+    <div class="w-full md:w-2/5 flex flex-col">
+      <p>پیش نمایش اشتراک:</p>
+
+      <div class="flex flex-row ">
+
+        <div class="flex flex-col items-center w-full">
+          <div class="relative top-10 p-2 rounded-xl flex flex-col font-extrabold text-white bg-[#07b1bc] items-center w-4/5 ">
+            <p>تازه وارد</p>
+            <p>65.423 تومان</p>
+          </div>
+
+          <div class="w-full rounded-xl border-2 border-gray-200 flex flex-col gap-2 items-center justify-end pb-3 px-5 h-96" >
+            <p>یک ماه</p>
+            <div class="h-[1px] bg-gray-200 w-11/12"></div>
+            <p>{{massNum}}</p>
+            <div class="h-[1px] bg-gray-200 w-11/12"></div>
+            <img [src]="panel ? '/svg/Check%20Circle%202.svg':'/svg/Close%20Circle%202.svg'">
+            <div class="h-[1px] bg-gray-200 w-11/12"></div>
+            <img [src]="telegram ? '/svg/Check%20Circle%202.svg':'/svg/Close%20Circle%202.svg'">
+            <div class="h-[1px] bg-gray-200 w-11/12"></div>
+            <img [src]="whatsapp? '/svg/Check%20Circle%202.svg':'/svg/Close%20Circle%202.svg'">
+            <div class="h-[1px] bg-gray-200 w-11/12"></div>
+            <img [src]="email ? '/svg/Check%20Circle%202.svg':'/svg/Close%20Circle%202.svg'">
+
+            <div class="flex flex-row gap-3 items-center mt-5">
+              <p class="py-2 px-4 rounded-xl  text-white bg-[#07b1bc]">شروع اشتراک</p>
+
+            </div>
+
+          </div>
+        </div>
+
+
+
+        <div class="flex flex-col items-center w-3/5">
+          <div class="relative top-10 px-2 py-5 rounded-xl flex flex-col font-extrabold text-black bg-[#e2e2e2] items-center w-4/5 ">
+            <p>جدول اشتراک ها</p>
+          </div>
+
+          <div class="w-full rounded-xl border-2 border-gray-200 flex flex-col gap-2 items-center justify-end pb-3 h-96" >
+            <p>مدت زمان اشتراک</p>
+            <div class="h-[1px] bg-gray-200 w-11/12"></div>
+            <p>تعداد پیام دریافتی</p>
+            <div class="h-[1px] bg-gray-200 w-11/12"></div>
+            <p>پنل</p>
+            <div class="h-[1px] bg-gray-200 w-11/12"></div>
+            <p>واتساپ</p>
+            <div class="h-[1px] bg-gray-200 w-11/12"></div>
+            <p>تلگرام</p>
+            <div class="h-[1px] bg-gray-200 w-11/12"></div>
+            <p>ایمیل</p>
+
+            <div class="flex flex-row gap-3 items-center mt-5 h-10">
+
+            </div>
+
+          </div>
+        </div>
+
+
+
+      </div>
+
+
+
+<!--دکمه های پایین-->
+      <div class="flex flex-row py-5 gap-3 w-full">
+        <p class="w-2/3 bg-[#07b1bc] text-white rounded-xl p-3 text-center">
+          ثبت
+        </p>
+
+        <p class="w-1/3 border-2 border-b-red-600 text-red-600 p-3 rounded-xl text-center">
+          انصراف
+        </p>
+      </div>
+
+
+
+    </div>
+</div>

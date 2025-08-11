@@ -1,0 +1,45 @@
+<div class="w-screen h-screen fixed inset-0 bg-[#07b1bc] z-0">
+  <img src="/image/Vector.png" class="opacity-10">
+</div>
+
+
+<div class="w-screen h-screen flex flex-col items-center relative justify-center z-10">
+  <div class="w-96 h-[450px] bg-white rounded-2xl flex justify-between flex-col gap-3 p-10 shadow-2xl items-center">
+    <div>
+      <h1 class="text-3xl font-black">ورود به حساب کاربری</h1>
+    </div>
+
+    <div class="flex flex-row justify-between items-center w-full">
+      <label>پست الکترونیکی</label>
+      <input (input)="emailCheck()" type="email" [(ngModel)]="email" placeholder="example@gmail.com" class="placeholder:text-gray-400 focus:outline-none py-2 px-3 rounded-xl border-2 border-gray-300">
+    </div>
+    @if(emailError){
+      <p class="text-red-600 text-xs">لطفا ایمیل معتبری وارد کنید</p>
+    }
+
+    <div class="flex flex-row justify-between items-center w-full">
+      <label>رمز عبور </label>
+      <input type="password" [(ngModel)]="password" class="focus:outline-none py-2 px-3 rounded-xl border-2 border-gray-300">
+    </div>
+    @if(passwordError){
+      <p class="text-red-600 text-xs">حداقل طول رمز 8 کارکتر است</p>
+    }
+
+    <div class="w-full flex flex-row-reverse items-center justify-between">
+      <img [src]="imgUrl" class="w-30 p-2" alt="captcha" style=" pointer-events: none;">
+      <p-inputotp class="flex flex-row-reverse" [(ngModel)]="value" />
+    </div>
+
+
+
+    <button (click)="loginClick()" class="cursor-pointer text-white font-bold p-2 w-full rounded-xl bg-[#07b1bc]">ورود</button>
+
+    <div class="flex flex-row justify-center gap-3">
+      <p class="text-gray-400">حساب کاربری ندارید؟</p>
+      <a routerLink="/login/signup/1"><p class="cursor-pointer"> ثبت نام کنید</p></a>
+    </div>
+
+
+    <p class="text-sm text-gray-400">ورود به سایت به منزله پذیرش قوانین می باشد</p>
+  </div>
+</div>

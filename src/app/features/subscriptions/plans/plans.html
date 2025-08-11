@@ -1,0 +1,42 @@
+<div class="w-full border-t-gray-200 border-t-2 flex flex-row px-2 md:px-5 pb-10 font-bold">
+  <div class="w-3/5 md:w-3/4 flex flex-row justify-center items-center gap-0">
+
+    <p-carousel class="w-full px-5" [value]="codeSamples" [showNavigators]="false" [numVisible]="4" [circular]="true"   [responsiveOptions]="responsiveOptions">
+      <ng-template let-codeSamples pTemplate="codeSamples">
+        <div [innerHTML]="codeSamples"></div>
+      </ng-template>
+    </p-carousel>
+
+  </div>
+
+  <div class="w-2/5 md:w-1/4 ">
+    <div class="flex flex-col items-center">
+      <div class="relative top-10 px-2 py-5 rounded-xl flex flex-col font-extrabold text-black bg-[#e2e2e2] items-center w-4/5 ">
+        <p class="text-sm md:text-lg">جدول اشتراک ها</p>
+      </div>
+
+      <div class="w-full rounded-xl border-2 border-gray-200 flex flex-col gap-2 items-center justify-end pb-3 h-96" >
+        <p>مدت زمان اشتراک</p>
+        <div class="h-[1px] bg-gray-200 w-11/12"></div>
+        <p>تعداد پیام دریافتی</p>
+        <div class="h-[1px] bg-gray-200 w-11/12"></div>
+        <p>پنل</p>
+        <div class="h-[1px] bg-gray-200 w-11/12"></div>
+        <p>واتساپ</p>
+        <div class="h-[1px] bg-gray-200 w-11/12"></div>
+        <p>تلگرام</p>
+        <div class="h-[1px] bg-gray-200 w-11/12"></div>
+        <p>ایمیل</p>
+
+        <div class="flex flex-row gap-3 items-center mt-5 h-10">
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+</div>

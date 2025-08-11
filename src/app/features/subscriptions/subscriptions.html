@@ -1,0 +1,32 @@
+<div class="w-full h-full flex flex-col gap-5 p-5">
+  <div class="flex justify-between flex-row items-center h-10 mb-5">
+    <div class="w-40 md:w-60 p-3 border-2 border-gray-300 rounded-xl flex flex-row justify-between">
+      <input placeholder="جستجو..." class="text-gray-500 focus:outline-none w-20 md:w-40">
+      <img src="/svg/Magnifer.svg" class="invert-50">
+    </div>
+
+    <div class="flex flex-col items-center gap-2 md:flex-row md:gap-10 md:pl-15">
+      <div>
+        تعداد اشتراک ها : 45234
+      </div>
+      <div class="text-[#07b1bc] font-bold">
+        <a routerLink="/dash/subscriptions/add">
+          + ایجاد اشتراک
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <div>
+    <app-table (del)="handleDel()"></app-table>
+  </div>
+  <div>
+    <app-plans></app-plans>
+  </div>
+
+
+</div>
+
+
+<app-remove [show]= "this.show" (close)="conf=false" (yes)="conf=true" (showb)="this.show=false"></app-remove>
